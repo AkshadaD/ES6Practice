@@ -9,6 +9,7 @@ console.log(set);
 for(let values of set){
     console.log(values);
 }
+console.log("1st indexed ele id: " +Array.from(set)[1]);
 
 //map
 var map=new Map();  
