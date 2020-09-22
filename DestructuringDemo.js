@@ -1,6 +1,8 @@
-/* Destructuring simply implies breaking down a complex structure into simpler parts. 
+/* Destructuring simply implies breaking down a complex structure 
+into simpler parts. 
 In JavaScript, this complex structure is usually an object or an array. 
-With the destructuring syntax, you can extract smaller fragments from arrays and objects. 
+With the destructuring syntax, you can extract smaller fragments from 
+arrays and objects. 
 Destructuring syntax can be used for variable declaration or variable assignment.
 You can also handle nested structures by using nested destructuring syntax. */
 
@@ -10,7 +12,7 @@ let person = {
     age:23
 }
 const {name, age, addr="xyz"} = person;
-console.log(`name is ${name}, age = ${age} addr = ${addr} `);
+console.log(`name is ${name}, age = ${age} addr = ${addr} `); //name is abc, age = 23 addr = xyz 
 
 
 
@@ -19,10 +21,10 @@ const person1 = {
     name:"john doe",
     country:"canada"
 }
-console.log(person1);
+console.log(person1); //{ name: 'john doe', country: 'canada' }
 const {name:fullname, country:place, age:years=27} = person1;
-console.log(`I am ${fullname} from ${place} and I am ${years} years old`);
-console.log(person1);
+console.log(`I am ${fullname} from ${place} and I am ${years} years old`);  //I am john doe from canada and I am 27 years old
+console.log(person1); //{ name: 'john doe', country: 'canada' }
 
 
 
@@ -37,23 +39,25 @@ const student ={
 }
 
 const {sname, marks:{maths, physics=80}} = student;
-console.log(`${sname} scored ${maths} in maths and ${physics} in physics`);
+console.log(`${sname} scored ${maths} in maths and ${physics} in physics`); //John scored 78 in maths and 80 in physics
 
-/*When using nested object destructuring, be careful to avoid using an empty nested object literal.
- Though it is valid syntax, it actually does no assignment. */
+/*When using nested object destructuring, be careful to avoid using 
+ an empty nested object literal.
+ Though it is valid syntax, it actually does no assignment. 
+*/
 const {marks:{}} = student;
 
 
 //1.array destructuring 
 const arr = [255,0,123];
 const [red, green, blue] = arr;
-console.log(`red= ${red} green= ${green} blue= ${blue}`);
+console.log(`red= ${red} green= ${green} blue= ${blue}`); //red= 255 green= 0 blue= 123
 
 
 //2.Array destucturing (defualt values)
 const rgb = [255, 0];
 const [r, g, b=142] = rgb;
-console.log(`r= ${r} g= ${g} b= ${b}`);
+console.log(`r= ${r} g= ${g} b= ${b}`); //r= 255 g= 0 b= 142
 
 
 //3.Array destucturing (skipping items)
@@ -70,11 +74,11 @@ let width = 300;
 let height = 500;
 const landscape = true;
 
-console.log(`width = ${width}   height = ${height}`);
+console.log(`width = ${width}   height = ${height}`); //width = 300   height = 500
 
 if(landscape){
      [width, height] = [height, width];
-    console.log(`width = ${width}  height = ${height}`);
+    console.log(`width = ${width}  height = ${height}`); //width = 500  height = 300
 }
 
 
@@ -84,4 +88,4 @@ const color = ['#FF00FF', [255, 0, 255], 'rgb5(255, 0, 255)'];
 // Use nested destructuring to assign red, green and blue
 const [hex, [red5, green5, blue5]] = color;
 
-console.log(hex, red5, green5, blue5);
+console.log(hex, red5, green5, blue5); //#FF00FF 255 0 255

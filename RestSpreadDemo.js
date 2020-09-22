@@ -20,7 +20,7 @@ myData("John", 25, "web developer");  //[ 'John', 25, 'web developer' ]
 
 //spread
 /* It’s the opposite to rest parameter , where rest parameter collects items into an array, 
-the spread operator unpacks the collected elements into single elements. */
+the spread operator unpacks the collected elements into single element. */
 
 console.log("\n spread to copy one array into another")
 let myNames = ["John", "Bob", "Marina"];
@@ -40,7 +40,7 @@ let names1 = ["John", "Bob", "Marina"];
 let names2 = ["Mady", "Ron"];
 
 let resArr1 = names1.concat(names2); //without spread
-console.log(resArr1);
+console.log("resArr1 without spread",resArr1); //[ 'John', 'Bob', 'Marina', 'Mady', 'Ron' ]
 let resArr2 = [...names1, ...names2]; //with spread
-console.log(resArr2);
+console.log("resArr2 with spread",resArr2); //[ 'John', 'Bob', 'Marina', 'Mady', 'Ron' ]
 

@@ -35,7 +35,7 @@ console.log(objArr);
 //2nd way
 objArr.splice(1,1);
 
-console.log(objArr);
+console.log("objArr: ",objArr);
 
 
 //3. Insert and delete elements from array 
